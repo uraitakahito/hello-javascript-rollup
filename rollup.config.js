@@ -1,7 +1,13 @@
+import commonjs from 'rollup-plugin-commonjs'
+
 export default {
-  input: 'script.js',
+  input: 'src/index.js',
   output: {
-    file: 'bundle.js',
-    format: 'iife'
-  }
+    file: 'dist/bundle.js',
+    format: 'umd',
+    name: 'calculator'
+  },
+  plugins: [
+    commonjs()
+  ]
 };
