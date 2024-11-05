@@ -9,8 +9,6 @@
     "dbaeumer.vscode-eslint",
     // https://marketplace.visualstudio.com/items?itemName=google.wireit
     "google.wireit",
-    // https://marketplace.visualstudio.com/items?itemName=vitest.explorer
-    "vitest.explorer",
     //
     // Others
     //
@@ -22,8 +20,6 @@
     "GitHub.copilot",
     // https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions
     "GitHub.vscode-github-actions",
-    // https://marketplace.visualstudio.com/items?itemName=jasonnutter.vscode-codeowners
-    "jasonnutter.vscode-codeowners",
     // https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
     "ms-azuretools.vscode-docker",
     // https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
