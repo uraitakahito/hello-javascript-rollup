@@ -1,3 +1,4 @@
+// A Rollup plugin to convert CommonJS modules to ES6
 import commonjs from 'rollup-plugin-commonjs'
 
 export default {
