@@ -10,7 +10,11 @@
   "license": "Apache-2.0",
   "description": "",
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.3.0",
     "rollup": "^4.22.4",
     "rollup-plugin-commonjs": "^10.1.0"
+  },
+  "dependencies": {
+    "the-answer": "^1.0.0"
   }
 }
