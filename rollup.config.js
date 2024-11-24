@@ -4,17 +4,33 @@ import commonjs from 'rollup-plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve';
 
 // can be an array (for multiple inputs)
-export default {
-  input: 'src/index.js', // conditionally required
+export default [
+  {
+    input: 'src/index.js', // conditionally required
 
-  // required (can be an array, for multiple outputs)
-  output: {
-    file: 'dist/bundle.js',
-    format: 'umd',
-    name: 'calculator'
+    // required (can be an array, for multiple outputs)
+    output: {
+      dir: 'dist/es6',
+      format: 'es',
+      name: 'calculator'
+    },
+    plugins: [
+      commonjs(),
+      resolve()
+    ]
   },
-  plugins: [
-    commonjs(),
-    resolve()
-  ]
-};
+  {
+    input: 'src/index.js', // conditionally required
+
+    // required (can be an array, for multiple outputs)
+    output: {
+      dir: 'dist/umd',
+      format: 'umd',
+      name: 'calculator'
+    },
+    plugins: [
+      commonjs(),
+      resolve()
+    ]
+  }
+];
