@@ -4,14 +4,20 @@ import commonjs from 'rollup-plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve';
 // https://rollupjs.org/command-line-interface/#config-intellisense
 import { defineConfig } from 'rollup';
+// To generate a minified bundle with terser
+import terser from '@rollup/plugin-terser';
 
 const config = defineConfig(
   [
     {
       input: 'src/main-a.js', // conditionally required
 
-      // required (can be an array, for multiple outputs)
       output: [
+        {
+          file: 'dist/iife/bundle.min.js',
+          format: 'iife',
+          plugins: [terser()]
+        },
         {
           dir: 'dist/es6',
           format: 'es',
@@ -30,7 +36,6 @@ const config = defineConfig(
     {
       input: 'src/main-b.js', // conditionally required
 
-      // required (can be an array, for multiple outputs)
       output: [
         {
           dir: 'dist/es6',
