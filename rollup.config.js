@@ -13,12 +13,10 @@ export default [
       {
         dir: 'dist/es6',
         format: 'es',
-        name: 'calculator'
       },
       {
         dir: 'dist/umd',
         format: 'umd',
-        name: 'calculator'
       },
     ],
     plugins: [
