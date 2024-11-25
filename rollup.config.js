@@ -9,28 +9,21 @@ export default [
     input: 'src/index.js', // conditionally required
 
     // required (can be an array, for multiple outputs)
-    output: {
-      dir: 'dist/es6',
-      format: 'es',
-      name: 'calculator'
-    },
+    output: [
+      {
+        dir: 'dist/es6',
+        format: 'es',
+        name: 'calculator'
+      },
+      {
+        dir: 'dist/umd',
+        format: 'umd',
+        name: 'calculator'
+      },
+    ],
     plugins: [
       commonjs(),
       resolve()
     ]
   },
-  {
-    input: 'src/index.js', // conditionally required
-
-    // required (can be an array, for multiple outputs)
-    output: {
-      dir: 'dist/umd',
-      format: 'umd',
-      name: 'calculator'
-    },
-    plugins: [
-      commonjs(),
-      resolve()
-    ]
-  }
 ];
