@@ -34,6 +34,25 @@ const config = defineConfig(
       ]
     },
     {
+      input: 'src/import-check/import-check-2.js',
+
+      output: [
+        {
+          dir: 'dist/es6',
+          format: 'es',
+        },
+        {
+          dir: 'dist/umd',
+          format: 'umd',
+          name: 'MyModule',
+        },
+      ],
+      plugins: [
+        commonjs(),
+        resolve()
+      ]
+    },
+    {
       input: 'src/main-b.js', // conditionally required
 
       output: [
