@@ -1,20 +1,19 @@
 //
 // ES2015
 //
-import add from './calculator.js';
-
-const result = add(1, 2);
-console.log(result);
+import answer from 'the-answer';
+import add from './calculator';
 
 //
 // @rollup/plugin-node-resolve test
 //
-import answer from 'the-answer';
+
+const result = add(1, 2);
+console.log(result);
 
 export default function () {
-  console.log('the answer is ' + answer);
+  console.log(`the answer is ${answer}`);
 }
-
 
 // //
 // // CommonJS

@@ -9,6 +9,6 @@ export default [
         dir: 'dist/es6',
         format: 'es',
       },
-    ]
-  }
+    ],
+  },
 ];
