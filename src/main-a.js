@@ -7,18 +7,5 @@ import add from './calculator';
 //
 // @rollup/plugin-node-resolve test
 //
-
-const result = add(1, 2);
+const result = add(1, answer);
 console.log(result);
-
-export default function () {
-  console.log(`the answer is ${answer}`);
-}
-
-// //
-// // CommonJS
-// //
-// const add = require('./calculator.js').add;
-
-// const result = add(1, 2);
-// console.log(result);
