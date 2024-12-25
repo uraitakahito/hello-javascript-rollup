@@ -1,5 +1,5 @@
 // A Rollup plugin to convert CommonJS modules to ES6
-import commonjs from 'rollup-plugin-commonjs'
+import commonjs from 'rollup-plugin-commonjs';
 // The @rollup/plugin-node-resolve plugin teaches Rollup how to find external modules.
 import resolve from '@rollup/plugin-node-resolve';
 // https://rollupjs.org/command-line-interface/#config-intellisense
@@ -16,7 +16,7 @@ const config = defineConfig(
         {
           file: 'dist/iife/bundle.min.js',
           format: 'iife',
-          plugins: [terser()]
+          plugins: [terser()],
         },
         {
           dir: 'dist/es6',
@@ -30,8 +30,8 @@ const config = defineConfig(
       ],
       plugins: [
         commonjs(),
-        resolve()
-      ]
+        resolve(),
+      ],
     },
 
     // In the case of Vite, it seems difficult to disable code splitting for multiple files.
@@ -55,8 +55,8 @@ const config = defineConfig(
       ],
       plugins: [
         commonjs(),
-        resolve()
-      ]
+        resolve(),
+      ],
     },
     {
       input: 'src/import-check/import-check-1-1.js',
@@ -74,8 +74,8 @@ const config = defineConfig(
       ],
       plugins: [
         commonjs(),
-        resolve()
-      ]
+        resolve(),
+      ],
     },
 
     {
@@ -94,8 +94,8 @@ const config = defineConfig(
       ],
       plugins: [
         commonjs(),
-        resolve()
-      ]
+        resolve(),
+      ],
     },
     {
       input: 'src/main-b.js', // conditionally required
@@ -105,9 +105,9 @@ const config = defineConfig(
           dir: 'dist/es6',
           format: 'es',
         },
-      ]
-    }
-  ]
+      ],
+    },
+  ],
 );
 
 export default config;
