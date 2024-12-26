@@ -97,6 +97,21 @@ const config = defineConfig(
         resolve(),
       ],
     },
+
+    {
+      input: 'src/import-check/suppress-warning.js',
+
+      output: [
+        {
+          dir: 'dist/es6',
+          format: 'es',
+        },
+      ],
+      // The hello-npmjs package is not bundled into the output.
+      // https://rollupjs.org/troubleshooting/#warning-treating-module-as-external-dependency
+      external: ['@uraitakahito/hello-npmjs'],
+    },
+
     {
       input: 'src/main-b.js', // conditionally required
 
