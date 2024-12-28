@@ -39,13 +39,17 @@ const config = defineConfig(
 
       output: [
         {
+          dir: 'dist/iife',
+          format: 'iife',
+          plugins: [terser()],
+        },
+        {
           dir: 'dist/es6',
           format: 'es',
         },
         {
           dir: 'dist/umd',
           format: 'umd',
-          name: 'MyModule',
         },
       ],
       plugins: [
