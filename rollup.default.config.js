@@ -40,26 +40,7 @@ const config = defineConfig(
     // Issues:
     // https://github.com/rollup/rollup/issues/2756
     {
-      input: 'src/import-check/import-check-1-0.js',
-
-      output: [
-        {
-          dir: 'dist/es6',
-          format: 'es',
-        },
-        {
-          dir: 'dist/umd',
-          format: 'umd',
-          name: 'MyModule',
-        },
-      ],
-      plugins: [
-        commonjs(),
-        resolve(),
-      ],
-    },
-    {
-      input: 'src/import-check/import-check-1-1.js',
+      input: 'src/import-check/import-internal-esmodule.js',
 
       output: [
         {
