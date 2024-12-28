@@ -24,6 +24,7 @@
     "rollup-plugin-commonjs": "^10.1.0"
   },
   "dependencies": {
+    "@uraitakahito/hello-commonjs": "^1.0.6",
     "@uraitakahito/hello-npmjs": "^1.1.5",
     "the-answer": "^1.0.0"
   }
