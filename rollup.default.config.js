@@ -10,31 +10,6 @@ import terser from '@rollup/plugin-terser';
 const config = defineConfig(
   [
     {
-      input: 'src/main-a.js', // conditionally required
-
-      output: [
-        {
-          file: 'dist/iife/bundle.min.js',
-          format: 'iife',
-          plugins: [terser()],
-        },
-        {
-          dir: 'dist/es6',
-          format: 'es',
-        },
-        {
-          dir: 'dist/umd',
-          format: 'umd',
-          name: 'MyModule',
-        },
-      ],
-      plugins: [
-        commonjs(),
-        resolve(),
-      ],
-    },
-
-    {
       input: 'src/import-check/import-external-commonjs.js',
 
       output: [
