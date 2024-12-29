@@ -2,8 +2,6 @@
   "name": "hello-javascript-rollup",
   "version": "1.1.0",
   "type": "module",
-  "main": "dist/umd/main-a.js",
-  "module": "dist/es6/main-a.js",
   "files": [
     "dist"
   ],
@@ -24,7 +22,7 @@
     "rollup-plugin-commonjs": "^10.1.0"
   },
   "dependencies": {
-    "@uraitakahito/hello-npmjs": "^1.1.0",
-    "the-answer": "^1.0.0"
+    "@uraitakahito/hello-commonjs": "^1.0.6",
+    "@uraitakahito/hello-npmjs": "^1.1.5"
   }
 }

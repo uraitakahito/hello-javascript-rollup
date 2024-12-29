@@ -10,11 +10,11 @@ import terser from '@rollup/plugin-terser';
 const config = defineConfig(
   [
     {
-      input: 'src/main-a.js', // conditionally required
+      input: 'src/import-check/import-external-commonjs.js',
 
       output: [
         {
-          file: 'dist/iife/bundle.min.js',
+          dir: 'dist/iife',
           format: 'iife',
           plugins: [terser()],
         },
@@ -25,7 +25,6 @@ const config = defineConfig(
         {
           dir: 'dist/umd',
           format: 'umd',
-          name: 'MyModule',
         },
       ],
       plugins: [
@@ -40,26 +39,7 @@ const config = defineConfig(
     // Issues:
     // https://github.com/rollup/rollup/issues/2756
     {
-      input: 'src/import-check/import-check-1-0.js',
-
-      output: [
-        {
-          dir: 'dist/es6',
-          format: 'es',
-        },
-        {
-          dir: 'dist/umd',
-          format: 'umd',
-          name: 'MyModule',
-        },
-      ],
-      plugins: [
-        commonjs(),
-        resolve(),
-      ],
-    },
-    {
-      input: 'src/import-check/import-check-1-1.js',
+      input: 'src/import-check/import-internal-esmodule.js',
 
       output: [
         {
@@ -97,6 +77,21 @@ const config = defineConfig(
         resolve(),
       ],
     },
+
+    {
+      input: 'src/import-check/suppress-warning.js',
+
+      output: [
+        {
+          dir: 'dist/es6',
+          format: 'es',
+        },
+      ],
+      // The hello-npmjs package is not bundled into the output.
+      // https://rollupjs.org/troubleshooting/#warning-treating-module-as-external-dependency
+      external: ['@uraitakahito/hello-npmjs'],
+    },
+
     {
       input: 'src/main-b.js', // conditionally required
 
