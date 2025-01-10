@@ -33,6 +33,30 @@ const config = defineConfig(
       ],
     },
 
+    {
+      input: 'src/import-check/import-external-esmodule.js',
+
+      output: [
+        {
+          dir: 'dist/iife',
+          format: 'iife',
+          // plugins: [terser()],
+        },
+        {
+          dir: 'dist/es6',
+          format: 'es',
+        },
+        {
+          dir: 'dist/umd',
+          format: 'umd',
+        },
+      ],
+      plugins: [
+        commonjs(),
+        resolve(),
+      ],
+    },
+
     // In the case of Vite, it seems difficult to disable code splitting for multiple files.
     // https://github.com/uraitakahito/hello-javascript-vite/blob/954cc418e1d7549b78bfd7d1e0f6556ccd4affd4/vite.config.mjs#L16-L25
     //
