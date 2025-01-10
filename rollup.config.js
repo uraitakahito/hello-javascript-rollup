@@ -10,6 +10,29 @@ import terser from '@rollup/plugin-terser';
 const config = defineConfig(
   [
     {
+      input: 'src/import-check/import-conditional-exports.js',
+
+      output: [
+        {
+          dir: 'dist/iife',
+          format: 'iife',
+          plugins: [terser()],
+        },
+        {
+          dir: 'dist/es6',
+          format: 'es',
+        },
+        {
+          dir: 'dist/umd',
+          format: 'umd',
+        },
+      ],
+      plugins: [
+        resolve(),
+      ],
+    },
+
+    {
       input: 'src/import-check/import-external-commonjs.js',
 
       output: [
