@@ -1,3 +1,3 @@
-import hello from '@uraitakahito/hello-npmjs';
+import hello from '@uraitakahito/hello-esmodule';
 
 console.log(hello.say());
