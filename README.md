@@ -1,3 +1,0 @@
-```console
-% rollup -c
-```
