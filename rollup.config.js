@@ -1,9 +1,12 @@
+/* eslint-disable max-len */
+
+// https://rollupjs.org/command-line-interface/#config-intellisense
+import { defineConfig } from 'rollup';
+
 // A Rollup plugin to convert CommonJS modules to ES6
 import commonjs from 'rollup-plugin-commonjs';
 // The @rollup/plugin-node-resolve plugin teaches Rollup how to find external modules.
 import resolve from '@rollup/plugin-node-resolve';
-// https://rollupjs.org/command-line-interface/#config-intellisense
-import { defineConfig } from 'rollup';
 // To generate a minified bundle with terser
 import terser from '@rollup/plugin-terser';
 
@@ -30,6 +33,18 @@ const config = defineConfig(
       plugins: [
         resolve(),
       ],
+
+      //
+      // Sample configuration to explicitly throw an error if an external dependency is not found.
+      // By default, Rollup only shows a warning and the build succeeds if an external dependency is not found.
+      // https://rollupjs.org/configuration-options/#onwarn
+      //
+      onwarn(warning, warn) {
+        if (warning.code === 'UNRESOLVED_IMPORT') {
+          throw new Error(`Unresolved import: ${warning.source}`);
+        }
+        warn(warning);
+      },
     },
 
     {
