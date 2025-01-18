@@ -163,6 +163,18 @@ const config = defineConfig(
       // https://rollupjs.org/troubleshooting/#warning-treating-module-as-external-dependency
       external: ['@uraitakahito/hello-esmodule'],
     },
+
+    {
+      input: 'src/main-b.js',
+      output: [
+        {
+          dir: 'dist/es6/src/import-check',
+          format: 'es',
+          preserveModules: true,
+        },
+      ],
+    },
+
   ],
 );
 
