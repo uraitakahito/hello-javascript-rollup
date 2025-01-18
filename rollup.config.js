@@ -9,6 +9,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 // // To generate a minified bundle with terser
 // import terser from '@rollup/plugin-terser';
+import copy from 'rollup-plugin-copy'
 
 //
 // This project has no barrel files and multiple entry points, so defineConfig() accepts an array of configurations
@@ -165,16 +166,22 @@ const config = defineConfig(
     },
 
     {
-      input: 'src/main-b.js',
+      input: 'src/entry.js',
       output: [
         {
-          dir: 'dist/es6/src/import-check',
+          dir: 'dist',
           format: 'es',
           preserveModules: true,
         },
       ],
+      plugins: [
+        copy({
+          targets: [
+            { src: 'src/test.html', dest: 'dist' },
+          ],
+        })
+      ],
     },
-
   ],
 );
 
