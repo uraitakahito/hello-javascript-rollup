@@ -7,8 +7,6 @@ import { defineConfig } from 'rollup';
 import commonjs from 'rollup-plugin-commonjs';
 // The @rollup/plugin-node-resolve plugin teaches Rollup how to find external modules.
 import resolve from '@rollup/plugin-node-resolve';
-// // To generate a minified bundle with terser
-// import terser from '@rollup/plugin-terser';
 import copy from 'rollup-plugin-copy'
 
 //
@@ -27,7 +25,6 @@ const config = defineConfig(
         {
           dir: 'dist/iife/src/import-check',
           format: 'iife',
-          // plugins: [terser()],
         },
         {
           dir: 'dist/umd/src/import-check',
@@ -62,7 +59,6 @@ const config = defineConfig(
         {
           dir: 'dist/iife/src/import-check',
           format: 'iife',
-          // plugins: [terser()],
         },
         {
           dir: 'dist/umd/src/import-check',
@@ -98,7 +94,6 @@ const config = defineConfig(
         {
           dir: 'dist/iife/src/import-check',
           format: 'iife',
-          // plugins: [terser()],
         },
         {
           dir: 'dist/umd/src/import-check',
@@ -139,7 +134,6 @@ const config = defineConfig(
         {
           dir: 'dist/iife/src/import-check',
           format: 'iife',
-          // plugins: [terser()],
         },
         {
           dir: 'dist/umd/src/import-check',
