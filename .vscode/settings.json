@@ -5,10 +5,26 @@
 //   Linux $HOME/.config/Code/User/settings.json
 {
   //
-  // Prettier
+  // Basic Editing
   //
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": false,
+  // https://code.visualstudio.com/docs/editor/codebasics#_how-do-i-turn-on-word-wrap
+  "editor.wordWrap": "on",
+
+  //
+  // JSON/JSONC
+  //
+  "[json]": {
+    "editor.detectIndentation": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false
+  },
+  "[jsonc]": {
+    "editor.detectIndentation": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false
+  },
 
   //
   // ESLint
@@ -25,5 +41,5 @@
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.formatOnSave": true
-  },
+  }
 }
