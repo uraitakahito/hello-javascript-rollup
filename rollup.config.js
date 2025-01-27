@@ -162,20 +162,24 @@ const config = defineConfig(
     },
 
     {
-      input: 'src/entry.js',
+      input: 'src/index.html',
+      plugins: [
+        copy({
+          targets: [
+            { src: 'src/index.html', dest: 'dist' },
+          ],
+        }),
+      ],
+    },
+
+    {
+      input: 'src/main.js',
       output: [
         {
           dir: 'dist',
           format: 'es',
           preserveModules: true,
         },
-      ],
-      plugins: [
-        copy({
-          targets: [
-            { src: 'src/entry.html', dest: 'dist' },
-          ],
-        }),
       ],
     },
   ],
