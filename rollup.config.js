@@ -162,17 +162,6 @@ const config = defineConfig(
     },
 
     {
-      input: 'src/index.html',
-      plugins: [
-        copy({
-          targets: [
-            { src: 'src/index.html', dest: 'dist' },
-          ],
-        }),
-      ],
-    },
-
-    {
       input: 'src/main.js',
       output: [
         {
@@ -180,6 +169,19 @@ const config = defineConfig(
           format: 'es',
           preserveModules: true,
         },
+      ],
+      plugins: [
+        //
+        // MEMO:
+        // Be careful about the watch mode targets. The file specified in the `input` parameter will be watched, not the file specified in the `targets` parameter of the `copy` method.
+        //
+        copy({
+          targets: [
+            { src: 'src/index.html', dest: 'dist' },
+          ],
+          // https://github.com/vladshcherbin/rollup-plugin-copy/blob/c874b668662802d0d7ce77f9eb7408c30e2977bf/src/index.js#L47-L55
+          verbose: true,
+        }),
       ],
     },
   ],
