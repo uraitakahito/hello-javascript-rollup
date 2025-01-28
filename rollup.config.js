@@ -3,7 +3,7 @@
 // A Rollup plugin to convert CommonJS modules to ES6
 import commonjs from 'rollup-plugin-commonjs';
 
-import copy from 'rollup-plugin-copy';
+import copy from '@uraitakahito/rollup-plugin-copy';
 
 // https://rollupjs.org/command-line-interface/#config-intellisense
 import { defineConfig } from 'rollup';
@@ -171,16 +171,14 @@ const config = defineConfig(
         },
       ],
       plugins: [
-        //
-        // MEMO:
-        // Be careful about the watch mode targets. The file specified in the `input` parameter will be watched, not the file specified in the `targets` parameter of the `copy` method.
-        //
         copy({
           targets: [
             { src: 'src/index.html', dest: 'dist' },
           ],
           // https://github.com/vladshcherbin/rollup-plugin-copy/blob/c874b668662802d0d7ce77f9eb7408c30e2977bf/src/index.js#L47-L55
           verbose: true,
+          // https://www.npmjs.com/package/@uraitakahito/rollup-plugin-copy
+          watchTargets: true,
         }),
       ],
     },
