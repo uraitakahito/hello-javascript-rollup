@@ -5,7 +5,8 @@ import randomSquare, {
   draw, reportArea, reportPerimeter,
 } from './modules/square.js';
 
-const myCanvas = create('myCanvas', document.body, 480, 320);
+const root = document.getElementById('root');
+const myCanvas = create('myCanvas', root, 480, 320);
 const reportList = createReportList(myCanvas.id);
 
 const square1 = draw(myCanvas.ctx, 50, 50, 100, 'blue');
