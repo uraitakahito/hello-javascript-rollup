@@ -103,7 +103,6 @@ const config = defineConfig(
         },
       ],
       plugins: [
-        commonjs(),
         resolve(),
       ],
 
