@@ -23,7 +23,8 @@ const config = defineConfig(
     {
       input: [
         'src/get-files/main.js',
-        ...getFiles('src/get-files', extensions),
+        ...getFiles('src/get-files/a', extensions),
+        ...getFiles('src/get-files/b', extensions),
       ],
       output: [
         {
