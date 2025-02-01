@@ -11,11 +11,30 @@ import { defineConfig } from 'rollup';
 // The @rollup/plugin-node-resolve plugin teaches Rollup how to find external modules.
 import resolve from '@rollup/plugin-node-resolve';
 
+import getFiles from './scripts/buildUtils.js';
+
+const extensions = ['.js', '.ts', '.jsx', '.tsx'];
+
 //
 // This project has no barrel files and multiple entry points, so defineConfig() accepts an array of configurations
 //
 const config = defineConfig(
   [
+    {
+      input: [
+        'src/get-files/main.js',
+        ...getFiles('src/get-files', extensions),
+      ],
+      output: [
+        {
+          dir: 'dist/es6/get-files',
+          format: 'es',
+          preserveModules: true,
+          preserveModulesRoot: 'src',
+        },
+      ],
+    },
+
     {
       input: 'src/import-check/import-conditional-exports.js',
       output: [
@@ -23,13 +42,14 @@ const config = defineConfig(
           dir: 'dist/es6',
           format: 'es',
           preserveModules: true,
+          preserveModulesRoot: 'src',
         },
         {
-          dir: 'dist/iife/src/import-check',
+          dir: 'dist/iife/import-check',
           format: 'iife',
         },
         {
-          dir: 'dist/umd/src/import-check',
+          dir: 'dist/umd/import-check',
           format: 'umd',
         },
       ],
@@ -57,13 +77,14 @@ const config = defineConfig(
           dir: 'dist/es6',
           format: 'es',
           preserveModules: true,
+          preserveModulesRoot: 'src',
         },
         {
-          dir: 'dist/iife/src/import-check',
+          dir: 'dist/iife/import-check',
           format: 'iife',
         },
         {
-          dir: 'dist/umd/src/import-check',
+          dir: 'dist/umd/import-check',
           format: 'umd',
         },
       ],
@@ -92,17 +113,19 @@ const config = defineConfig(
           dir: 'dist/es6',
           format: 'es',
           preserveModules: true,
+          preserveModulesRoot: 'src',
         },
         {
-          dir: 'dist/iife/src/import-check',
+          dir: 'dist/iife/import-check',
           format: 'iife',
         },
         {
-          dir: 'dist/umd/src/import-check',
+          dir: 'dist/umd/import-check',
           format: 'umd',
         },
       ],
       plugins: [
+        commonjs(),
         resolve(),
       ],
 
@@ -128,16 +151,17 @@ const config = defineConfig(
       input: 'src/import-check/import-internal-esmodule.js',
       output: [
         {
-          dir: 'dist/es6/src/import-check',
+          dir: 'dist/es6/',
           format: 'es',
           preserveModules: true,
+          preserveModulesRoot: 'src',
         },
         {
-          dir: 'dist/iife/src/import-check',
+          dir: 'dist/iife/import-check',
           format: 'iife',
         },
         {
-          dir: 'dist/umd/src/import-check',
+          dir: 'dist/umd/import-check',
           format: 'umd',
         },
       ],
@@ -150,9 +174,10 @@ const config = defineConfig(
       input: 'src/import-check/suppress-warning.js',
       output: [
         {
-          dir: 'dist/es6/src/import-check',
+          dir: 'dist/es6/',
           format: 'es',
           preserveModules: true,
+          preserveModulesRoot: 'src',
         },
       ],
       // The hello-esmodule package is not bundled into the output.
