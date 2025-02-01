@@ -29,7 +29,13 @@ const config = defineConfig(
       output: [
         {
           dir: 'dist/es6/get-files',
+
+          //
+          // What's so great about ES6 modules?
+          // https://github.com/rollup/rollup/wiki/ES6-modules#whats-so-great-about-es6-modules
+          //
           format: 'es',
+
           preserveModules: true,
           preserveModulesRoot: 'src',
         },
@@ -41,7 +47,13 @@ const config = defineConfig(
       output: [
         {
           dir: 'dist/es6',
+
+          //
+          // What's so great about ES6 modules?
+          // https://github.com/rollup/rollup/wiki/ES6-modules#whats-so-great-about-es6-modules
+          //
           format: 'es',
+
           preserveModules: true,
           preserveModulesRoot: 'src',
         },
@@ -76,7 +88,13 @@ const config = defineConfig(
       output: [
         {
           dir: 'dist/es6',
+
+          //
+          // What's so great about ES6 modules?
+          // https://github.com/rollup/rollup/wiki/ES6-modules#whats-so-great-about-es6-modules
+          //
           format: 'es',
+
           preserveModules: true,
           preserveModulesRoot: 'src',
         },
@@ -112,7 +130,13 @@ const config = defineConfig(
       output: [
         {
           dir: 'dist/es6',
+
+          //
+          // What's so great about ES6 modules?
+          // https://github.com/rollup/rollup/wiki/ES6-modules#whats-so-great-about-es6-modules
+          //
           format: 'es',
+
           preserveModules: true,
           preserveModulesRoot: 'src',
         },
@@ -153,7 +177,13 @@ const config = defineConfig(
       output: [
         {
           dir: 'dist/es6/',
+
+          //
+          // What's so great about ES6 modules?
+          // https://github.com/rollup/rollup/wiki/ES6-modules#whats-so-great-about-es6-modules
+          //
           format: 'es',
+
           preserveModules: true,
           preserveModulesRoot: 'src',
         },
@@ -191,7 +221,13 @@ const config = defineConfig(
       output: [
         {
           dir: 'dist',
+
+          //
+          // What's so great about ES6 modules?
+          // https://github.com/rollup/rollup/wiki/ES6-modules#whats-so-great-about-es6-modules
+          //
           format: 'es',
+
           preserveModules: true,
         },
       ],
