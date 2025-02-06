@@ -217,7 +217,7 @@ const config = defineConfig(
     },
 
     {
-      input: 'src/main.js',
+      input: 'src/dummy.js',
       output: [
         {
           dir: 'dist',
@@ -235,6 +235,62 @@ const config = defineConfig(
         copy({
           targets: [
             { src: 'src/index.html', dest: 'dist' },
+          ],
+          // https://github.com/vladshcherbin/rollup-plugin-copy/blob/c874b668662802d0d7ce77f9eb7408c30e2977bf/src/index.js#L47-L55
+          verbose: true,
+          // https://www.npmjs.com/package/@uraitakahito/rollup-plugin-copy
+          watchTargets: true,
+        }),
+      ],
+    },
+
+    {
+      input: 'src/calculator/main.js',
+      output: [
+        {
+          dir: 'dist/calculator',
+
+          //
+          // What's so great about ES6 modules?
+          // https://github.com/rollup/rollup/wiki/ES6-modules#whats-so-great-about-es6-modules
+          //
+          format: 'es',
+
+          preserveModules: true,
+        },
+      ],
+      plugins: [
+        copy({
+          targets: [
+            { src: 'src/calculator/index.html', dest: 'dist/calculator' },
+          ],
+          // https://github.com/vladshcherbin/rollup-plugin-copy/blob/c874b668662802d0d7ce77f9eb7408c30e2977bf/src/index.js#L47-L55
+          verbose: true,
+          // https://www.npmjs.com/package/@uraitakahito/rollup-plugin-copy
+          watchTargets: true,
+        }),
+      ],
+    },
+
+    {
+      input: 'src/rect/main.js',
+      output: [
+        {
+          dir: 'dist/rect',
+
+          //
+          // What's so great about ES6 modules?
+          // https://github.com/rollup/rollup/wiki/ES6-modules#whats-so-great-about-es6-modules
+          //
+          format: 'es',
+
+          preserveModules: true,
+        },
+      ],
+      plugins: [
+        copy({
+          targets: [
+            { src: 'src/rect/index.html', dest: 'dist/rect' },
           ],
           // https://github.com/vladshcherbin/rollup-plugin-copy/blob/c874b668662802d0d7ce77f9eb7408c30e2977bf/src/index.js#L47-L55
           verbose: true,
